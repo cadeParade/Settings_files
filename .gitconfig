@@ -22,6 +22,8 @@
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
 [core]
-          excludesfile = /Users/LC/.gitignore
+    excludesfile = /Users/LC/.gitignore
 [color]
-          ui = auto
+    ui = auto
+[rerere]
+    enabled = true
