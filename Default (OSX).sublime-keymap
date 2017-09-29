@@ -1,0 +1,11 @@
+[
+  { "keys": ["ctrl+backspace"], "command": "right_delete"},
+
+  { "keys": ["alt+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false } },
+  { "keys": ["alt+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true } },
+  { "keys": ["alt+shift+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true } },
+  { "keys": ["alt+shift+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true } },
+
+  { "keys": ["ctrl+super+right"], "command": "focus_neighboring_group"},
+  { "keys": ["ctrl+super+left"], "command": "focus_neighboring_group"}
+]

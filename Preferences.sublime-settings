@@ -1,0 +1,55 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Monokai Extended Bright (SL).tmTheme",
+	"draw_white_space": "all",
+	"file_exclude_patterns":
+	[
+		"*.scssc",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"development.log",
+		"production.log"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		"bower_components",
+		"build",
+		"tmp",
+		"dist",
+		"coverage",
+		"installed"
+	],
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"rulers":
+	[
+		80
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true
+}
