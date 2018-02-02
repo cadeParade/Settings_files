@@ -41,6 +41,13 @@ C_CYAN='\[\e[0;36m\]'
 C_LIGHTCYAN='\[\e[1;36m\]'
 C_DEFAULT='\[\e[0m\]'
 
+GOOD_EMOJI_ARR=(💜 🤖 💋 👄 🧚‍♀️ 🧜‍♂️ 🧞‍♀️ 🙅‍♀️ 💅 👑 👓 🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼 🐨 🐯 🦁 🐮 🐷 🐽 🐸 🐵 🐔 🐧 🐦 🐤 🐣 🐥 🦆 🦉 🐴 🦄 🐝 🦋 🐌 🐚 🐞 🦎 🐍 🐙 🐠 🐳 🐬 🐋 🦓 🕊 🐇 🐿 🦔 🐉 🌿 ☘️ 🍀 🌹 🌺 🌸 🌼 🌈 ⭐️ 💧 ⚡️ ✨ 🌟 ⭐️ 🌊 🍏 🍎 🍐 🍊 🍋 🍌 🍉 🍑 🍒 🍈 🍓 🍇 🥝 🍅 🍆 🥑 🥦 🥒 🌶 🥖 🍞 🥐 🍠 🥔 🥕 🌽 🥨 🧀 🍕 🍟 🍔 🌭 🌮 🌯 🍣 🍦 🍰 🎂 🍭 🍪 🥟 🍩 🍿 🍫 🍬 🍯 ☕️ 🥤 🍸 🍷 🥂 🎼 🏆 🏍 🛵 ⚓️ ✈️ 🚀 ⛱ 🏔 ⛩ 💰 🕯 💸 💎 🔨 🔮 🛁 🎀 🎈 🎉 ❤️ 🧡 💛 💚 💙 💜 🖤 💖 💗 💕 ❣️ 💔 💟 ⛔️ 💯 ✅ 😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 😍 🙃 🤓 😎 🤩 🤗️ 😺 😸 😹 😻 😼 😽 🙀 😾 😿)
+BAD_EMOJI_ARR=(😡 😢 😭 😖 😤 🤬 🤯 😳 😱 😨 😰 😥 😓 🤢 🤮 😈 👿 👹 👺 💩 👻 💀 ☠ ❌ 🗡 🔪 ⚔️)
+
+# Choose a random emoji
+GOOD_EMOJI='`echo ${GOOD_EMOJI_ARR[$RANDOM % 22]}`'
+BAD_EMOJI='`echo ${BAD_EMOJI_ARR[$RANDOM % 22]}`'
+
 function setsymbols() {
   local exit_status=$?
   local color_exit=
@@ -53,20 +60,20 @@ function setsymbols() {
   [[ $id == 0 ]] && end_sym=\#
   if [ $exit_status = 0 ]; then
     if [[ $id == 0 ]]; then
-      color_exit="$C_LIGHTBLUE"; color_exit2="$C_BLUE"; color_exit3="$C_WHITE";exit_emoji=💜;
+      color_exit="$C_LIGHTBLUE"; color_exit2="$C_BLUE"; color_exit3="$C_WHITE";exit_emoji="$GOOD_EMOJI";
     else
-      color_exit="$C_LIGHTGREEN"; color_exit2="$C_GREEN"; color_exit3="$C_LIGHTBLUE";exit_emoji=💜;
+      color_exit="$C_LIGHTGREEN"; color_exit2="$C_GREEN"; color_exit3="$C_LIGHTBLUE";exit_emoji="$GOOD_EMOJI";
     fi
     usym=":"
   else
     if [[ $id == 0 ]]; then
-      color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_BROWN"; exit_emoji=💩;
+      color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_BROWN"; exit_emoji="$BAD_EMOJI";
     else
-      color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_LIGHTCYAN";exit_emoji=💩;
+      color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_LIGHTCYAN";exit_emoji="$BAD_EMOJI";
     fi
     usym="!"
   fi
-  PS1="${VIRTUAL_ENV:+$C_PURPLE($(basename $VIRTUAL_ENV)) }${C_DEFAULT}${exit_emoji}  \
+  PS1="${VIRTUAL_ENV:+$C_PURPLE($(basename $VIRTUAL_ENV)) }${C_DEFAULT} ${exit_emoji} \
 ${color_exit}\u\
 ${color_git}${usym}\
 ${color_exit3}\w${color_exit2}${color_job}\
@@ -81,7 +88,4 @@ else
     PS1='\u@${HOSTNAME}:\w\$ '
 fi
 unset color_prompt force_color_prompt
-# ️🔷😈💛💙
-# # ⚡️🔴🔱💥🌟👍👎💔💜💚
-# 💩
-# 😎
+
