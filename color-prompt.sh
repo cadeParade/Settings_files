@@ -1,3 +1,7 @@
+parse_git_branch() {
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
@@ -66,6 +70,7 @@ function setsymbols() {
 ${color_exit}\u\
 ${color_git}${usym}\
 ${color_exit3}\w${color_exit2}${color_job}\
+${C_PINK}$(parse_git_branch)\
 ${end_sym}\
 ${C_DEFAULT} "
 }
