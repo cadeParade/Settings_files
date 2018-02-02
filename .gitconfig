@@ -23,7 +23,12 @@
     ignored = !git ls-files -v | grep "^[[:lower:]]"
 [core]
     excludesfile = /Users/LC/.gitignore
+    editor="sublime -n -w"
 [color]
     ui = auto
 [rerere]
     enabled = true
+[push]
+	default = current
+[pull]
+    default = current
