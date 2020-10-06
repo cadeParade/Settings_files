@@ -21,6 +21,8 @@
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
+    f = "--force-with-lease"
+    puff = push --force-with-lease
 [core]
     excludesfile = /Users/LC/.gitignore
     editor="sublime -n -w"
@@ -32,3 +34,5 @@
 	default = current
 [pull]
     default = current
+[credential]
+	helper = osxkeychain

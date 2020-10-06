@@ -1,0 +1,23 @@
+# run these commands to set up a new computer
+
+# open sublime with `sublime`
+# ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+
+# set up iterm
+# put `source ~/path/to/settings_files/color-prompt.sh` in .profile
+# how to set up colorls??
+# open iTerm2 > Preferences > Profiles > Keys > Set Left option key to Esc+
+
+# link git stuff
+# ln -s "~/path/to.settings-files/.gitconfig" ~/.gitconfig
+
+# Copy sublime profiles to sublime settings
+# Install Sublime package manager
+# install Sublime monokai theme
+
+
+# to save sublime settings
+# save sublime user settings
+# save a list of installed sublime packages
+# save sublime snippets
+# save sublime custom keybindings file
